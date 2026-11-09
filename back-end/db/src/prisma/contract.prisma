@@ -1,0 +1,11 @@
+// use prisma-8
+
+model User {
+  id       ObjectId @id @map("_id")
+  name     String   @unique
+  idade    Int32    
+  email    String   @unique
+  createdAt Date    @onCreate(now())
+  updatedAt Date    @onCreate(now()) @onUpdate(now())
+}
+
